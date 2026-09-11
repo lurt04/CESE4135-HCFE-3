@@ -14,11 +14,6 @@
 \usepackage{mathtools}
 \usepackage{comment}
 \usepackage{MnSymbol,wasysym}
-\usepackage{tabularx}
-\usepackage{multirow}
-
-\usepackage{tikz}
-\usetikzlibrary{positioning, arrows.meta}
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 \mode<presentation>{\usetheme{tud}}
@@ -32,9 +27,9 @@
 \renewcommand{\cite}[1]{\footnote<.->[frame]{\fullcite{#1}}}
 
 
-\title[]{Home Care for the Elderly Week 2}
+\title[]{The Title of the Presentation}
 \institute[]{Delft University of Technology, The Netherlands}
-\author{HCFE-3}
+\author{First Author \and Second Author}
 %\date{}
 
 \begin{document}
@@ -47,18 +42,6 @@
 
 }
 
-\begin{frame}{Problem statement}
-\textit{\Large{how can we unintrusively assist the elderly with mild cognitive decline, in staying at their homes for longer.}}
-    
-\end{frame}
-
-\input{presentations/beamer/ObjectiveTreeGeneralOverview}
-
-\input{presentations/beamer/ReduceFrictionObjectiveTree}
-
-
-\input{presentations/beamer/SystemDefinitionMatrix}
-
 \begin{frame}{Example frame 1}
 This is the first frame
 \end{frame}
@@ -70,6 +53,23 @@ This is the first frame
 \item item 2
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}{Minimization of costs}
+    \begin{block}{Stakeholders}
+        \begin{itemize}
+            \item Elderly and families - the system needs to be cheap to run and upkeep day to day
+            \item Health institutions - the system should reduce the costly consequences
+            \item Commercial companies - costs of the system should stay low 
+    \end{itemize}
+\end{block}
+
+\vspace{0.1cm}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{costminimizationtree.png}
+\end{figure}
 \end{frame}
 
 \end{document}
