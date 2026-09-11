@@ -14,6 +14,11 @@
 \usepackage{mathtools}
 \usepackage{comment}
 \usepackage{MnSymbol,wasysym}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 \mode<presentation>{\usetheme{tud}}
@@ -27,9 +32,9 @@
 \renewcommand{\cite}[1]{\footnote<.->[frame]{\fullcite{#1}}}
 
 
-\title[]{The Title of the Presentation}
+\title[]{Home Care for the Elderly Week 2}
 \institute[]{Delft University of Technology, The Netherlands}
-\author{First Author \and Second Author}
+\author{HCFE-3}
 %\date{}
 
 \begin{document}
@@ -41,6 +46,18 @@
 {\setbeamertemplate{footline}{\usebeamertemplate*{minimal footline}}
 
 }
+
+\begin{frame}{Problem statement}
+\textit{\Large{how can we unintrusively assist the elderly with mild cognitive decline, in staying at their homes for longer.}}
+    
+\end{frame}
+
+\input{presentations/beamer/ObjectiveTreeGeneralOverview}
+
+\input{presentations/beamer/ReduceFrictionObjectiveTree}
+
+
+\input{presentations/beamer/SystemDefinitionMatrix}
 
 \begin{frame}{Example frame 1}
 This is the first frame

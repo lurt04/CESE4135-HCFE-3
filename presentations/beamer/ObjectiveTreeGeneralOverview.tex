@@ -1,0 +1,63 @@
+\begin{frame}{Objective Tree}
+
+\begin{center}
+
+\begin{tikzpicture}[
+    box/.style={
+        draw,
+        rounded corners=2pt,
+        align=center,
+        minimum height=0.55cm,
+        minimum width=2.4cm,
+        font=\tiny
+    },
+    root/.style={
+        box,
+        minimum width=2.8cm,
+        minimum height=0.8cm,
+        font=\scriptsize\bfseries
+    },
+    arrow/.style={
+        -{Stealth},
+        thick
+    }
+]
+
+% ============================================================
+% ROOT
+% ============================================================
+
+\node[root] (system) {The System};
+
+
+% ============================================================
+% LEVEL 1
+% ============================================================
+
+\node[box, right=2.0cm of system, yshift=3.0cm] (friction)
+    {Reduce\\friction};
+
+\node[box, right=2.0cm of system, yshift=1.0cm] (cost)
+    {Minimize\\cost};
+
+\node[box, right=2.0cm of system, yshift=-1.0cm] (maintenance)
+    {Low\\maintenance};
+
+\node[box, right=2.0cm of system, yshift=-3.0cm] (home)
+    {Enable longer\\independent living\\at home};
+
+
+% ============================================================
+% CONNECTIONS FROM SYSTEM
+% ============================================================
+
+\draw[arrow] (system) -- (friction);
+\draw[arrow] (system) -- (cost);
+\draw[arrow] (system) -- (maintenance);
+\draw[arrow] (system) -- (home);
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{frame}
