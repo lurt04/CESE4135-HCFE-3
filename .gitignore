@@ -7,6 +7,8 @@ presentations/beamer/*.pdf
 presentations/beamer/*.run.xml
 presentations/beamer/*.snm
 presentations/beamer/*.toc
+presentations/beamer/*.bbl
+presentations/beamer/*.blg
 !presentations/beamer/tud_white.pdf
 
 
