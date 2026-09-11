@@ -1,0 +1,104 @@
+\begin{frame}{Low Maintenance}
+
+\begin{center}
+
+\begin{tikzpicture}[
+    box/.style={
+        draw,
+        rounded corners=2pt,
+        align=center,
+        minimum height=0.55cm,
+        minimum width=2.4cm,
+        font=\tiny
+    },
+    root/.style={
+        box,
+        minimum width=2.8cm,
+        minimum height=0.8cm,
+        font=\scriptsize\bfseries
+    },
+    arrow/.style={
+        -{Stealth},
+        thick
+    }
+]
+
+% ============================================================
+% ROOT
+% ============================================================
+
+\node[root] (maintenance) {Low Maintenance};
+
+
+% ============================================================
+% LEVEL 1
+% ============================================================
+
+\node[box, right=2.0cm of maintenance, yshift=3.0cm] (robust)
+    {Physically robust};
+
+\node[box, right=2.0cm of maintenance, yshift=1.0cm] (frequency)
+    {Low\\maintenance frequency};
+
+\node[box, right=2.0cm of maintenance, yshift=-1.0cm] (calibration)
+    {No calibration\\after installation};
+
+\node[box, right=2.0cm of maintenance, yshift=-3.0cm] (easy)
+    {Easy\\maintenance};
+    
+    
+% ============================================================
+% LEVEL 2
+% ============================================================
+\node[box, right=1.2cm of robust, yshift=0.5cm] (rating)
+    {Appropriate water and\\dust resistance};
+
+\node[box, right=1.2cm of robust, yshift=-0.5cm] (resilient)
+    {Resilient\\against impacts};
+    
+%\node[box, right=1.2cm of robust, yshift=-0.75cm] (wear)
+%    {Low\\wear \& tear};
+    
+    
+%\node[box, right=1.2cm of frequency, yshift=0.5cm] (pred_interval)
+ %   {Predictable\\service interval};
+\node[box, right=1.2cm of frequency, yshift=0.5cm] (long_interval)
+    {Long\\service interval};
+\node[box, right=1.2cm of frequency, yshift=-0.5cm] (bat_life)
+    {Long\\battery life};
+
+%\node[box, right=1.2cm of easy, yshift=2.0cm] (access)
+%    {Easy access to\\replaceable components};
+\node[box, right=1.2cm of easy, yshift=1.0cm] (indication)
+    {Clear\\fault indication};
+\node[box, right=1.2cm of easy, yshift=0.0cm] (bat_rep)
+    {Easy\\battery replacement};
+    
+   
+% ============================================================
+% CONNECTIONS FROM ROOT
+% ============================================================
+
+\draw[arrow] (maintenance) -- (robust);
+\draw[arrow] (maintenance) -- (frequency);
+\draw[arrow] (maintenance) -- (calibration);
+\draw[arrow] (maintenance) -- (easy);
+
+% LEVEL 2
+\draw[arrow] (robust) -- (rating);
+\draw[arrow] (robust) -- (resilient);
+%\draw[arrow] (robust) -- (wear);
+
+%\draw[arrow] (frequency) -- (pred_interval);
+\draw[arrow] (frequency) -- (long_interval);
+\draw[dotted, arrow] (frequency) -- (bat_life);
+
+%\draw[arrow] (easy) -- (access.west);
+\draw[arrow] (easy) -- (indication);
+\draw[dotted, arrow] (easy) -- (bat_rep);
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{frame}
