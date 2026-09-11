@@ -1,102 +1,22 @@
-
 \begin{frame}{Taking away the friction.}
-\begin{center}
+	\begin{itemize}
+		\item Minimize user interaction
+		\begin{itemize}
+			\item Minimize required actions
+		\end{itemize}
 
-\begin{tikzpicture}[
-    box/.style={
-        draw,
-        rounded corners=2pt,
-        align=center,
-        minimum height=0.55cm,
-        minimum width=2.4cm,
-        font=\tiny
-    },
-    root/.style={
-        box,
-        minimum width=2.8cm,
-        minimum height=0.8cm,
-        font=\scriptsize\bfseries
-    },
-    arrow/.style={
-        -{Stealth},
-        thick
-    }
-]
+		\item Minimize cognitive effort
+		\begin{itemize}
+			\item Reduce complexity
+			\item Make feedback intuitive
+		\end{itemize}
 
-% ============================================================
-% ROOT
-% ============================================================
+		\item Integrate into daily life
+		\begin{itemize}
+			\item Preserve existing routines
+			\item Blend into home environment
+		\end{itemize}
 
-\node[root] (root) {Reduce\\Friction};
-
-
-% ============================================================
-% LEVEL 1
-% ============================================================
-
-\node[box, right=1.2cm of root, yshift=3cm] (interaction)
-    {Minimize user\\interaction};
-
-\node[box, right=1.2cm of root, yshift=1cm] (cognitive)
-    {Minimize cognitive\\effort};
-
-
-\node[box, right=1.2cm of root, yshift=-1cm] (daily)
-    {Integrate into\\daily life};
-
-\node[box, right=1.2cm of root, yshift=-3cm] (physical)
-    {Minimize physical\\effort};
-
-
-% ============================================================
-% ROOT CONNECTIONS
-% ============================================================
-
-\draw[arrow] (root) -- (interaction);
-\draw[arrow] (root) -- (cognitive);
-\draw[arrow] (root) -- (physical);
-\draw[arrow] (root) -- (daily);
-
-
-% ============================================================
-% MINIMIZE USER INTERACTION
-% ============================================================
-
-\node[box, right=1.2cm of interaction] (actions)
-    {Minimize required\\actions};
-
-\draw[arrow] (interaction) -- (actions);
-
-
-% ============================================================
-% MINIMIZE COGNITIVE EFFORT
-% ============================================================
-
-\node[box, right=1.2cm of cognitive, yshift=0.4cm] (complexity)
-    {Reduce\\complexity};
-
-\node[box, right=1.2cm of cognitive, yshift=-0.4cm] (feedback)
-    {Make feedback\\intuitive};
-
-\draw[arrow] (cognitive) -- (complexity);
-\draw[arrow] (cognitive) -- (feedback);
-
-
-
-% ============================================================
-% INTEGRATE INTO DAILY LIFE
-% ============================================================
-
-\node[box, right=1.2cm of daily, yshift=0.4cm] (routines)
-    {Preserve existing\\routines};
-
-\node[box, right=1.2cm of daily, yshift=-0.4cm] (environment)
-    {Blend into home\\environment};
-
-\draw[arrow] (daily) -- (routines);
-\draw[arrow] (daily) -- (environment);
-
-\end{tikzpicture}
-
-\end{center}
+		\item Minimize physical effort
+	\end{itemize}
 \end{frame}
