@@ -2,7 +2,14 @@
 % Author: Erwin Walraven (initial version was created by Maarten Abbink)
 % Delft Universiy of Technology
 
+%\documentclass{beamer}
+% TU Delft beamer template
+% Author: Erwin Walraven (initial version was created by Maarten Abbink)
+% Delft Universiy of Technology
+
 \documentclass{beamer}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
 \usepackage[english]{babel}
 \usepackage{calc}
 \usepackage[absolute,overlay]{textpos}
@@ -22,6 +29,8 @@
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 \mode<presentation>{\usetheme{tud}}
+
+% ... rest of your preamble unchanged ...
 
 % BIB SETTINGS
 \usepackage[backend=bibtex,firstinits=true,maxnames=30,maxcitenames=1,mincitenames=1,url=false,style=authoryear]{biblatex}
@@ -61,7 +70,7 @@
 
 \input{ReduceFrictionObjectiveTree}
 
-\begin{frame}{Minimization of costs}
+\begin{frame}{Cost minimization tree}
     \begin{block}{Stakeholders}
         \begin{itemize}
             \item Elderly and families - the system needs to be cheap to run and upkeep day to day\cite{ghosh2026}
@@ -70,10 +79,48 @@
     \end{itemize}
 \end{block}
 
-\begin{figure}
     \centering
-    \includegraphics[width=0.65\linewidth]{costminimizationtree.png}
-\end{figure}
+    \resizebox{0.7\linewidth}{!}{%
+    \begin{tikzpicture}[
+        root/.style={
+            rectangle, rounded corners, draw=black, thick,
+            minimum width=3.2cm, minimum height=1.2cm,
+            align=center, font=\small\bfseries
+        },
+        box/.style={
+            rectangle, rounded corners, draw=black, thick,
+            minimum width=3.2cm, minimum height=1.2cm,
+            align=center, font=\small
+        },
+        arrow/.style={-{Stealth[length=2.5mm]}, thick}
+    ]
+
+    % ROOT
+    \node[root] (costs) {Minimization of costs};
+
+    % LEVEL 1
+    \node[box, right=2.0cm of costs, yshift=2.0cm] (impl)
+        {Minimize\\implementation costs};
+    \node[box, right=2.0cm of costs, yshift=0.0cm] (missed)
+        {Minimize cost of\\missed doses};
+    \node[box, right=2.0cm of costs, yshift=-2.0cm] (maint)
+        {Minimize\\maintenance costs};
+
+    % LEVEL 2
+    \node[box, right=1.2cm of missed, yshift=1.0cm] (fatality)
+        {Avoided\\fatality costs};
+    \node[box, right=1.2cm of missed, yshift=-1.0cm] (hosp)
+        {Avoided\\hospitalization costs};
+
+    % CONNECTIONS
+    \draw[arrow] (costs) -- (impl);
+    \draw[arrow] (costs) -- (missed);
+    \draw[arrow] (costs) -- (maint);
+    \draw[arrow] (missed) -- (fatality);
+    \draw[arrow] (missed) -- (hosp);
+
+    \end{tikzpicture}
+    }
 \end{frame}
 
 
